@@ -1,5 +1,12 @@
 import Link from "next/link";
+import { Poppins } from "next/font/google";
 import "./globals.css";
+
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-poppins",
+});
 
 export const metadata = {
   title: "UG Sexual Harassment Policy",
@@ -13,7 +20,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="antialiased min-h-screen flex flex-col pt-16 font-sans">
+      <body className={`${poppins.variable} font-sans antialiased min-h-screen flex flex-col pt-16`}>
         <header className="fixed top-0 left-0 right-0 h-16 bg-white border-b border-gray-200 z-50 flex items-center justify-between px-4 md:px-6 shadow-sm">
            <Link href="/" className="font-bold text-[#9B1D2C] text-lg md:text-xl tracking-tight shrink-0">UG Policy</Link>
            <nav className="flex gap-4 md:gap-6 text-sm font-medium text-gray-600 overflow-x-auto whitespace-nowrap px-4 py-2 hidden-scrollbar w-full md:w-auto md:ml-auto">

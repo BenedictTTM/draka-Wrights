@@ -241,26 +241,27 @@ export default function Home() {
       </section>
 
       <section className="mx-auto w-full max-w-6xl px-6 pb-20 md:px-10">
-        <div className="flex flex-col items-center gap-10 rounded-[32px] bg-[#f9f9e9] p-8 md:flex-row md:items-start md:p-12">
+        <div className="flex flex-col items-center gap-10 rounded-[32px] bg-white px-6 py-10 )] md:flex-row md:items-start md:px-10 md:py-12">
           <div className="flex-1">
-            <h3 className="mb-4 text-2xl font-bold text-[#1f1b17]">Get help and support</h3>
-            <p className="mb-6 text-[#5a5148]">
+            <h3 className="mb-4 text-2xl font-bold text-[#1f1b17] sm:text-3xl">Get help and support</h3>
+            <p className="mb-6 text-sm leading-7 text-[#6a6158] sm:text-base">
               Everyone responds differently to sexual harassment and other forms of sexual violence – so whatever someone feels is a valid response.
             </p>
-            <p className="text-[#5a5148]">
+            <p className="text-sm leading-7 text-[#6a6158] sm:text-base">
               If you have experienced sexual harassment or sexual violence of any kind – whether it was recently or a long time ago – Rape Crisis is here for you. We will listen to you and believe you.
             </p>
           </div>
           
-          <div className="flex w-full max-w-md items-center gap-6 rounded-3xl bg-white p-6 shadow-sm md:w-auto">
-            <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-[#e6f0e0]">
-              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M21 15C21 15.5304 20.7893 16.0391 20.4142 16.4142C20.0391 16.7893 19.5304 17 19 17H7L3 21V5C3 4.46957 3.21071 3.96086 3.58579 3.58579C3.96086 3.21071 4.46957 3 5 3H19C19.5304 3 20.0391 3.21071 20.4142 3.58579C20.7893 3.96086 21 4.46957 21 5V15Z" fill="#a3c585" />
-                <path d="M7 11H17V13H7V11ZM7 7H17V9H7V7Z" fill="white" />
+          <div className="flex w-full max-w-md items-center gap-6 rounded-[24px] border border-[#ece6dc] bg-[#f7f3ec]/50 p-6 shadow-sm md:w-auto">
+            <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-[#1e6b5b]/10 text-[#1e6b5b]">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+                <path d="M8 9h8" />
+                <path d="M8 13h6" />
               </svg>
             </div>
-            <a href="#" className="font-semibold text-[#2f2a25] underline hover:text-[#1e6b5b]">
-              Get help and support after sexual harassment
+            <a href="#" className="font-semibold text-[#1e6b5b] underline transition hover:text-[#175548]">
+              Get help and support after sexual harament
             </a>
           </div>
         </div>
