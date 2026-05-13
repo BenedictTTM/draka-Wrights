@@ -10,6 +10,15 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-poppins), "Trebuchet MS", sans-serif;
   --font-mono: var(--font-geist-mono);
+  
+  --color-primary: #003b7a;
+  --color-primary-dark: #002855;
+  --color-accent: #c9a24a;
+  --color-bgPrimary: #ffffff;
+  --color-bgSurface: #f8f5ee;
+  --color-textPrimary: #111827;
+  --color-textSecondary: #4b5563;
+  --color-borderLight: #e5e7eb;
 }
 
 body {
