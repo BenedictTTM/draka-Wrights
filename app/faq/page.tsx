@@ -1,5 +1,7 @@
 'use client';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
+import { FileText, Users, Scales } from 'lucide-react';
 
 export default function FAQ() {
   const faqs = [
@@ -52,24 +54,27 @@ export default function FAQ() {
             <div>
               <h2 className="text-xl font-semibold text-textPrimary">Resources & Downloads</h2>
               <div className="mt-4 rounded-xl border border-borderLight bg-primary/5 p-6 shadow-sm">
-                <a
-                  href="#"
+                <Link
+                  href="/resources"
                   className="block rounded-xl border border-borderLight bg-white p-4 text-sm font-semibold text-textSecondary transition hover:border-primary hover:text-primary"
                 >
-                  📄 Annex I: Examples of Misconduct
-                </a>
-                <a
-                  href="#"
+                  <FileText className="inline-block mr-2 h-4 w-4 align-text-bottom text-primary" />
+                  Annex I: Examples of Misconduct
+                </Link>
+                <Link
+                  href="/committee"
                   className="mt-3 block rounded-xl border border-borderLight bg-white p-4 text-sm font-semibold text-textSecondary transition hover:border-primary hover:text-primary"
                 >
-                  👥 Annex II: Committee Composition
-                </a>
-                <a
+                  <Users className="inline-block mr-2 h-4 w-4 align-text-bottom text-primary" />
+                  Annex II: Committee Composition
+                </Link>
+                <Link
                   href="/procedures"
                   className="mt-3 block rounded-xl border border-borderLight bg-white p-4 text-sm font-semibold text-primary transition hover:border-primary"
                 >
-                  ⚖️ Annex III: Grievance Procedures
-                </a>
+                  <Scales className="inline-block mr-2 h-4 w-4 align-text-bottom text-primary" />
+                  Annex III: Grievance Procedures
+                </Link>
                 <div className="mt-6 border-t border-borderLight pt-4 text-xs text-textSecondary">
                   <p>Original Policy PDF: NO. 873 FRIDAY, MAY 5, 2017</p>
                   <p className="mt-2">Version control: Sec 7.0</p>

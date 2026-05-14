@@ -1,5 +1,7 @@
 'use client';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
+import { Lock, ArrowRight } from 'lucide-react';
 
 export default function Procedures() {
   const steps = [
@@ -62,7 +64,7 @@ export default function Procedures() {
             <div className="space-y-5">
               <div className="rounded-xl border border-borderLight bg-white p-6 text-center shadow-sm">
                 <h3 className="flex items-center justify-center gap-2 text-base font-semibold text-textPrimary">
-                  <span className="text-lg">🔒</span> Confidentiality Pledge
+                  <Lock className="h-5 w-5 text-primary" /> Confidentiality Pledge
                 </h3>
                 <p className="mt-2 text-sm text-textSecondary">
                   "Committee shall maintain confidentiality" (Annex III (k)).
@@ -73,12 +75,12 @@ export default function Procedures() {
                 <p className="mt-2 text-sm text-textSecondary">
                   Appeals must go to the University of Ghana Appeals Board.
                 </p>
-                <a
-                  href="#"
+                <Link
+                  href="/about-policy"
                   className="mt-3 inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-primary-dark hover:underline transition-colors"
                 >
-                  View Statutes Page &#8594;
-                </a>
+                  View Statutes Page <ArrowRight className="h-4 w-4" />
+                </Link>
               </div>
             </div>
           </div>

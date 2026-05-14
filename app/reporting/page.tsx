@@ -1,14 +1,15 @@
 'use client';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
+import { AlertTriangle, Shield, Clipboard, Eye, Edit3, Calendar, MapPin } from 'lucide-react';
 
 const STEPS = ['Category', 'Details', 'Evidence', 'Review'];
 const CATEGORIES = [
-  { label: 'Sexual Harassment', icon: '⚠️', desc: 'Unwanted sexual advances, comments, or conduct' },
-  { label: 'Safety Concern', icon: '🛡️', desc: 'Physical safety hazards or threats' },
-  { label: 'Policy Violation', icon: '📋', desc: 'Breach of institutional rules or code of conduct' },
-  { label: 'Stalking / Bullying', icon: '👁️', desc: 'Persistent unwanted contact or intimidation' },
-  { label: 'Other', icon: '📝', desc: 'Other concerns not listed above' },
+  { label: 'Sexual Harassment', icon: AlertTriangle, desc: 'Unwanted sexual advances, comments, or conduct' },
+  { label: 'Safety Concern', icon: Shield, desc: 'Physical safety hazards or threats' },
+  { label: 'Policy Violation', icon: Clipboard, desc: 'Breach of institutional rules or code of conduct' },
+  { label: 'Stalking / Bullying', icon: Eye, desc: 'Persistent unwanted contact or intimidation' },
+  { label: 'Other', icon: Edit3, desc: 'Other concerns not listed above' },
 ];
 
 export default function Reporting() {
@@ -94,18 +95,23 @@ export default function Reporting() {
                   <h2 className="text-2xl font-bold text-textPrimary mb-1">Select Category</h2>
                   <p className="text-sm text-textSecondary mb-6">Choose the type of incident you are reporting.</p>
                   <div className="space-y-3">
-                    {CATEGORIES.map(c => (
-                      <button key={c.label} type="button" onClick={() => { set('category', c.label); next(); }}
-                        className={`w-full flex items-center gap-4 p-4 rounded-xl border text-left transition-all ${
-                          form.category === c.label ? 'border-primary bg-primary/5 ring-1 ring-primary' : 'border-borderLight hover:border-primary/40 hover:bg-bgPrimary'
-                        }`}>
-                        <span className="text-2xl">{c.icon}</span>
-                        <div>
-                          <p className="font-semibold text-textPrimary text-sm">{c.label}</p>
-                          <p className="text-xs text-textSecondary">{c.desc}</p>
-                        </div>
-                      </button>
-                    ))}
+                    {CATEGORIES.map(c => {
+                      const Icon = c.icon;
+                      return (
+                        <button key={c.label} type="button" onClick={() => { set('category', c.label); next(); }}
+                          className={`w-full flex items-center gap-4 p-4 rounded-xl border text-left transition-all ${
+                            form.category === c.label ? 'border-primary bg-primary/5 ring-1 ring-primary' : 'border-borderLight hover:border-primary/40 hover:bg-bgPrimary'
+                          }`}>
+                          <span className="flex items-center justify-center h-8 w-8 rounded-md bg-bgPrimary/40 text-primary">
+                            <Icon className="h-5 w-5" />
+                          </span>
+                          <div>
+                            <p className="font-semibold text-textPrimary text-sm">{c.label}</p>
+                            <p className="text-xs text-textSecondary">{c.desc}</p>
+                          </div>
+                        </button>
+                      );
+                    })}
                   </div>
                 </motion.div>
               )}
@@ -269,8 +275,18 @@ export default function Reporting() {
                           <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/></svg>
                         </button>
                       </div>
-                      {form.incident_date && <p className="text-xs text-textSecondary mb-1">📅 {form.incident_date}{form.incident_time && ` • ${form.incident_time}`}</p>}
-                      {form.location && <p className="text-xs text-textSecondary mb-2">📍 {form.location}</p>}
+                      {form.incident_date && (
+                        <p className="text-xs text-textSecondary mb-1 flex items-center gap-2">
+                          <Calendar className="h-4 w-4 text-textSecondary" />
+                          <span>{form.incident_date}{form.incident_time && ` • ${form.incident_time}`}</span>
+                        </p>
+                      )}
+                      {form.location && (
+                        <p className="text-xs text-textSecondary mb-2 flex items-center gap-2">
+                          <MapPin className="h-4 w-4 text-textSecondary" />
+                          <span>{form.location}</span>
+                        </p>
+                      )}
                       <p className="text-xs text-textSecondary line-clamp-3 border-l-2 border-borderLight pl-2">{form.description}</p>
                     </div>
 
